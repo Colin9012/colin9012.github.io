@@ -105,6 +105,7 @@ roomToNode.set(18,"b13");
 roomToNode.set(19,"b13");
 roomToNode.set(20,"b13");
 roomToNode.set(27,"b13");
+roomToNode.set("Main Gym","b5");
 roomToNode.set(50,"b8");
 roomToNode.set(52,"b9");
 roomToNode.set(53,"b9");
