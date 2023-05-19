@@ -82,7 +82,7 @@ roomToNode.set(165,"a30");
 roomToNode.set(166,"a30");
 roomToNode.set(168,"a30");
 roomToNode.set(167,"a30");
-roomToNode.set(163,"a30");
+roomToNode.set("Auditorium","a30");
 roomToNode.set(171,"a31");
 roomToNode.set(176,"a32");
 roomToNode.set(175,"a32");
