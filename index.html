@@ -35,8 +35,8 @@
     var roomsSelect;
     var destinationSelect;
     roomToNodeAsc = new Map([...roomToNode.entries()].sort(function(a,b){
-        if(a[0]=="Commons" || a[0]=="Main Office") {return -1;}
-        if(b[0]=="Commons" || b[0]=="Main Office") {return 1;}
+        if(a[0]=="Commons" || a[0]=="Main Office" || a[0]=="Auditorium") {return -1;}
+        if(b[0]=="Commons" || b[0]=="Main Office" || b[0]=="Auditorium") {return 1;}
         return Number(a[0])-Number(b[0]);
     }));
     window.onload = function() {
