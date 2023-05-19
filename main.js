@@ -16,12 +16,13 @@ startingLocation=params.get("start");
 endingLocation=params.get("end");
 // Initialize the index in datas that will later become the index for the start and goal nodes
 
-if(startingLocation!="Commons" && startingLocation!="Main Office") {
+if(startingLocation!="Commons" && startingLocation!="Main Office" && startingLocation!="Auditorium") {
     startingLocation=Number(startingLocation);
 }
-if(endingLocation!="Commons" && endingLocation!="Main Office") {
+if(endingLocation!="Commons" && endingLocation!="Main Office" && endingLocation!="Auditorium") {
     endingLocation=Number(endingLocation);
 }
+
 function onWindowChange() {
     var mapp = document.getElementById("map");
     v(roomToNode.get(startingLocation),roomToNode.get(endingLocation));
