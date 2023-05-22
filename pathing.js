@@ -27,8 +27,8 @@ function h_cost(n,sum) {
 // the beggining
 
 function raceToBottom(n) {
- pen.lineWidth=5;
-  if(n.isStart) {pen.fillStyle="rgb(0,255,0)";pen.beginPath();pen.arc(n.x,n.y,6,0,2*Math.PI);pen.fill();return n;}
+ pen.lineWidth=5*scale;
+  if(n.isStart) {pen.fillStyle="rgb(0,255,0)";pen.beginPath();pen.arc(n.x,n.y,6*scaleY,0,2*Math.PI);pen.fill();return n;}
   if(n.floor!=n.parent.floor) {return raceToBottom(n.parent);}
   pen.beginPath();
     //pen.setLineDash([10,10]);   <--- Optionally make line dotted, but marketting said it's bad
@@ -36,20 +36,6 @@ function raceToBottom(n) {
   pen.lineTo(n.parent.x,n.parent.y);
   pen.stroke();
   return raceToBottom(n.parent);
-}
-function drawNode(n, index) {
-  pen.fillStyle="rgb(100,0,0)";
-  if(n.isStart) {
-    pen.fillStyle="rgb(0,255,0)";
-  }
-  if(n.isGoal) {
-    pen.fillStyle="rgb(255,0,0)";
-  }
-  pen.beginPath();
-  pen.ellipse(n.x,n.y,4,4,0,0,Math.PI*2);
-  pen.font="20px serif"
-  pen.fillText(index,n.x+5,n.y);
-  pen.fill();
 }
 
 function v(startNode, endNode) {
@@ -70,7 +56,7 @@ function v(startNode, endNode) {
     for(var i=0;i<NUMBER_OF_MAIN_FLOOR_NODES;i++) {
         // "nodes" is a map with the name of the node (a15 for example) as key and its coords as values.
         var coords=new node(nodes.get("a"+i)[0]*scale,nodes.get("a"+i)[1]*scaleY,false,false,"a",mapWidth,mapHeight);
-        drawNode(coords,i);  //<--- optionally draw the node to screen
+        //drawNode(coords,i);  //<--- optionally draw the node to screen
     
         if(i==startNode.substring(1)&&startNode.charAt(0)=='a') {coords.isStart=true;var start =i;}
         if(i==endNode.substring(1)&&endNode.charAt(0)=='a') {coords.isGoal=true;var goal = i;}
@@ -81,7 +67,7 @@ function v(startNode, endNode) {
     for(var i=0;i<floorNodes.size;i++) {
         // "floorNodes" is a map with the name of the node (b7 for example) as key and its coords as values.
         var coords=new node(floorNodes.get("b"+i)[0]*scale,floorNodes.get("b"+i)[1]*scaleY,false,false,"b",mapWidth,mapHeight);
-        drawNode(coords,i);  //<--- optionally draw the node to screen
+        //drawNode(coords,i);  //<--- optionally draw the node to screen
     
         if(i==startNode.substring(1)&&startNode.charAt(0)=='b') {coords.isStart=true;var start =i+NUMBER_OF_MAIN_FLOOR_NODES;}
         if(i==endNode.substring(1)&&endNode.charAt(0)=='b') {coords.isGoal=true;var goal = i+NUMBER_OF_MAIN_FLOOR_NODES;}
