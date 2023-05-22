@@ -55,7 +55,8 @@ function drawNode(n, index) {
 function v(startNode, endNode) {
     // Clean the canvas for future drawing
     pen.clearRect(0,0,canvas.width,canvas.height);
-    
+    scale=3333/canvas.getBoundingClientRect().width;
+    scaleY=2118/canvas.getBoundingClientRect().height;
     // Map img/width
     var mapWidth=mapp.getBoundingClientRect().width;
     var mapHeight=mapp.getBoundingClientRect().height;
@@ -68,8 +69,8 @@ function v(startNode, endNode) {
     // Here I load the main floor nodes into datas[], and set isStart and isGoal if they are the start/end.
     for(var i=0;i<NUMBER_OF_MAIN_FLOOR_NODES;i++) {
         // "nodes" is a map with the name of the node (a15 for example) as key and its coords as values.
-        var coords=new node(nodes.get("a"+i)[0],nodes.get("a"+i)[1],false,false,"a",mapWidth,mapHeight);
-        //drawNode(coords,i);  //<--- optionally draw the node to screen
+        var coords=new node(nodes.get("a"+i)[0]*scale,nodes.get("a"+i)[1]*scaleY,false,false,"a",mapWidth,mapHeight);
+        drawNode(coords,i);  //<--- optionally draw the node to screen
     
         if(i==startNode.substring(1)&&startNode.charAt(0)=='a') {coords.isStart=true;var start =i;}
         if(i==endNode.substring(1)&&endNode.charAt(0)=='a') {coords.isGoal=true;var goal = i;}
@@ -79,8 +80,8 @@ function v(startNode, endNode) {
     // Load basement (The Pit) nodes
     for(var i=0;i<floorNodes.size;i++) {
         // "floorNodes" is a map with the name of the node (b7 for example) as key and its coords as values.
-        var coords=new node(floorNodes.get("b"+i)[0],floorNodes.get("b"+i)[1],false,false,"b",mapWidth,mapHeight);
-        //drawNode(coords,i);  //<--- optionally draw the node to screen
+        var coords=new node(floorNodes.get("b"+i)[0]*scale,floorNodes.get("b"+i)[1]*scaleY,false,false,"b",mapWidth,mapHeight);
+        drawNode(coords,i);  //<--- optionally draw the node to screen
     
         if(i==startNode.substring(1)&&startNode.charAt(0)=='b') {coords.isStart=true;var start =i+NUMBER_OF_MAIN_FLOOR_NODES;}
         if(i==endNode.substring(1)&&endNode.charAt(0)=='b') {coords.isGoal=true;var goal = i+NUMBER_OF_MAIN_FLOOR_NODES;}
@@ -154,7 +155,7 @@ function v(startNode, endNode) {
             
             raceToBottom(currentNode);
             // Draw a red circle at the end to signify it's the end
-            pen.fillStyle="rgb(255,0,0)";pen.beginPath();pen.arc(currentNode.x,currentNode.y,6,0,2*Math.PI);pen.fill();
+            pen.fillStyle="rgb(255,0,0)";pen.beginPath();pen.arc(currentNode.x,currentNode.y,6*scaleY,0,2*Math.PI);pen.fill();
             return;
         }
     
