@@ -57,6 +57,7 @@ roomToNode.set(141,"a37");
 // a16 doesn't have any room its just a passover node
 roomToNode.set(162,"a17");
 roomToNode.set("Commons","a17");
+roomToNode.set("Extended Commons","a20");
 // a18 and a19 doesnt have any room its just a passover node
 roomToNode.set(200,"a20");
 roomToNode.set(205,"a21");
