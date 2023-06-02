@@ -16,10 +16,10 @@ startingLocation=params.get("start");
 endingLocation=params.get("end");
 // Initialize the index in datas that will later become the index for the start and goal nodes
 
-if(startingLocation!="Commons" && startingLocation!="Main Office" && startingLocation!="Pantheon/Auditorium" && startingLocation!="Main Gym") {
+if(startingLocation!="Commons" && startingLocation!="Main Office" && startingLocation!="Pantheon/Auditorium" && startingLocation!="Main Gym" && startingLocation!="Extended Commons") {
     startingLocation=Number(startingLocation);
 }
-if(endingLocation!="Commons" && endingLocation!="Main Office" && endingLocation!="Pantheon/Auditorium"  && endingLocation!="Main Gym") {
+if(endingLocation!="Commons" && endingLocation!="Main Office" && endingLocation!="Pantheon/Auditorium"  && endingLocation!="Main Gym" && endingLocation!="Extended Commons") {
     endingLocation=Number(endingLocation);
 }
 
