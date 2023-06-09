@@ -42,6 +42,7 @@ roomToNode.set(111,"a36");
 roomToNode.set(107,"a9");
 roomToNode.set(103,"a9");
 roomToNode.set(105,"a9");
+roomToNode.set(182,"a18");
 roomToNode.set("Main Office","a10");
 roomToNode.set(189,"a11");
 // a12 doesn't have any room its just a passover node
