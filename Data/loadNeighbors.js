@@ -13,7 +13,7 @@ neighbors.set("a11", ["a10","a12","a34"]);
 neighbors.set("a12", ["a11","a13","a34"]);
 neighbors.set("a13", ["a12","a14","a18"]);
 neighbors.set("a14", ["a3","a13","a6"]);
-neighbors.set("a15", ["a3","a16"]);
+neighbors.set("a15", ["a3","a16","a37"]);
 neighbors.set("a16", ["a15","a17"]);
 neighbors.set("a17", ["a16","a18","a19","a29"]);
 neighbors.set("a18", ["a13","a17"]);
