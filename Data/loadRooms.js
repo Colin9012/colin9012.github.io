@@ -50,7 +50,7 @@ roomToNode.set(180,"a13");
 roomToNode.set(181,"a13");
 roomToNode.set(100,"a14");
 roomToNode.set(132,"a14");
-roomToNode.set(126,"a14");
+roomToNode.set("Library(126)","a14");
 roomToNode.set(138,"a15");
 roomToNode.set(136,"a15");
 roomToNode.set(137,"a15");
